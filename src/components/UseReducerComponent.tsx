@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import Button from "./layout/Button";
 
 const initialState = {
   counter: 1,
@@ -30,14 +31,16 @@ export default function UseReducerComponent() {
   return (
     <div>
       <div>{state.counter}</div>
-      <div>
-        <button onClick={() => dispatch({ type: "increment", payload: 10 })}>
-          Increment
-        </button>{" "}
-        |{" "}
-        <button onClick={() => dispatch({ type: "decrement", payload: 10 })}>
-          Decrement
-        </button>
+      <div className="space-x-2">
+        <Button
+          text="increment"
+          onClick={() => dispatch({ type: "increment", payload: 10 })}
+        />
+
+        <Button
+          text="decrement"
+          onClick={() => dispatch({ type: "decrement", payload: 10 })}
+        />
       </div>
     </div>
   );
