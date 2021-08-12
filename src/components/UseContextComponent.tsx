@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import UserContext, { UserState } from "../store";
 import faker from "faker";
+import Button from "./layout/Button";
 
 function ConsumerComponent() {
   const user = useContext(UserContext);
@@ -21,16 +22,16 @@ function UseContextComponent() {
   return (
     <UserContext.Provider value={user}>
       <ConsumerComponent />
-      <button
+      <Button
+        text="Change context"
+        className="mt-2"
         onClick={() =>
           setUser({
             first: faker.name.firstName(),
             last: faker.name.lastName(),
           })
         }
-      >
-        Change Context
-      </button>
+      />
     </UserContext.Provider>
   );
 }

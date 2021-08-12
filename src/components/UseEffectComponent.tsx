@@ -13,5 +13,5 @@ export default function UseEffectComponent() {
     };
   }, []);
 
-  return <div>{val}</div>;
+  return <div>Time: {val}</div>;
 }

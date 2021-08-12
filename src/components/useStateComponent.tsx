@@ -1,25 +1,20 @@
 import { useState } from "react";
+import Button from "./layout/Button";
 
 function UseStateComponent() {
-  const [arr, setArr] = useState<number[]>([]);
-
-  const [name, setName] = useState<string | null>(null);
+  const [arr, setArr] = useState<number[]>([1]);
 
   return (
     <div>
-      <div>
-        <button onClick={() => setArr([...arr, arr.length + 1])}>
-          Add to aray
-        </button>
-        <button onClick={() => setArr([])}>Delete array</button>
-        {JSON.stringify(arr)}
+      <div className="space-x-2">
+        <Button
+          text="Add to array"
+          onClick={() => setArr([...arr, arr.length + 1])}
+        />
+        <Button text="Delete array" onClick={() => setArr([1])} />
       </div>
+      {JSON.stringify(arr)}
       {/* useState - 2 */}
-      <div>
-        <button onClick={() => setName("yey")}>Add name</button>
-
-        {JSON.stringify(name)}
-      </div>
     </div>
   );
 }
