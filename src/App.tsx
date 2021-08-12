@@ -9,6 +9,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/hooks" component={Hooks} />
+        <Route path="*" exact={true} component={Home} />
       </Switch>
     </Router>
   );
