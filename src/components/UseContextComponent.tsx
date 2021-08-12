@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import UserContext, { UserState } from "./store";
+import UserContext, { UserState } from "../store";
 import faker from "faker";
 
 function ConsumerComponent() {
